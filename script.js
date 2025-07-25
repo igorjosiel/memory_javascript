@@ -69,24 +69,28 @@ function handleCardClick(cardElement, card) {
 
   if (flippedCards.length === 2) {
     isCheckingPair = true;
+    attempts++;
 
     const [firstCard, secondCard] = flippedCards;
     
     if (firstCard.card.content === secondCard.card.content) {
-      console.log("Teset");
-
-      flippedCards = [];
-      isCheckingPair = false;
+      matchedPairs++;
     } else {
       setTimeout(() => {
         firstCard.cardElement.classList.remove("revealed");
         secondCard.cardElement.classList.remove("revealed");
-
-        flippedCards = [];
-        isCheckingPair = false;
       }, 1000);
     }
+
+    flippedCards = [];
+    isCheckingPair = false;
+
+    updateStats();
   }
+}
+
+function updateStats() {
+  document.getElementById("stats").textContent = `${matchedPairs} acertos de ${attempts} tentativas`;
 }
 
 renderCards();

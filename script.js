@@ -59,7 +59,34 @@ function renderCards() {
 }
 
 function handleCardClick(cardElement, card) {
-  console.log(cardElement, card);
+  if (isCheckingPair || cardElement.classList.contains("revealed")) {
+    return;
+  }
+
+  cardElement.classList.add("revealed");
+
+  flippedCards.push({ cardElement, card });
+
+  if (flippedCards.length === 2) {
+    isCheckingPair = true;
+
+    const [firstCard, secondCard] = flippedCards;
+    
+    if (firstCard.card.content === secondCard.card.content) {
+      console.log("Teset");
+
+      flippedCards = [];
+      isCheckingPair = false;
+    } else {
+      setTimeout(() => {
+        firstCard.cardElement.classList.remove("revealed");
+        secondCard.cardElement.classList.remove("revealed");
+
+        flippedCards = [];
+        isCheckingPair = false;
+      }, 1000);
+    }
+  }
 }
 
 renderCards();

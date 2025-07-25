@@ -75,6 +75,18 @@ function handleCardClick(cardElement, card) {
     
     if (firstCard.card.content === secondCard.card.content) {
       matchedPairs++;
+
+      cardItems.forEach(item => {
+        if (item.content === firstCard.card.content) {
+          item.matched = true;
+        }
+      });
+
+      const toFind = cardItems.find(item => item.matched === false);
+
+      if (!toFind) {
+        alert("Parabéns, você venceu o jogo!");
+      }
     } else {
       setTimeout(() => {
         firstCard.cardElement.classList.remove("revealed");

@@ -82,6 +82,11 @@ function handleCardClick(cardElement, card) {
         }
       });
 
+      flippedCards = [];
+      isCheckingPair = false;
+
+      updateStats();
+
       const toFind = cardItems.find(item => item.matched === false);
 
       if (!toFind) {
@@ -91,13 +96,13 @@ function handleCardClick(cardElement, card) {
       setTimeout(() => {
         firstCard.cardElement.classList.remove("revealed");
         secondCard.cardElement.classList.remove("revealed");
+
+        flippedCards = [];
+        isCheckingPair = false;
+
+        updateStats();
       }, 1000);
     }
-
-    flippedCards = [];
-    isCheckingPair = false;
-
-    updateStats();
   }
 }
 
@@ -105,4 +110,22 @@ function updateStats() {
   document.getElementById("stats").textContent = `${matchedPairs} acertos de ${attempts} tentativas`;
 }
 
-renderCards();
+function resetGame() {
+  flippedCards = [];
+  matchedPairs = 0;
+  attempts = 0;
+  isCheckingPair = false;
+
+  cardItems.forEach(card => card.matched = false);
+
+  renderCards();
+  updateStats();
+}
+
+function initGame() {
+  renderCards();
+
+  document.getElementById("restart").addEventListener("click", resetGame)
+}
+
+initGame();

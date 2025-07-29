@@ -1,5 +1,7 @@
 # 🐾 Jogo da Memória - Emojis de Animais
 
+![Imagem do jogo](assets/screen_game.png)
+
 Bem-vindo ao **Jogo da Memória com Emojis de Animais**!  
 Este projeto foi desenvolvido como exercício prático para reforçar os fundamentos de **HTML**, **CSS** e **JavaScript puro**, sem o uso de frameworks ou bibliotecas externas.
 
@@ -36,12 +38,6 @@ O objetivo do jogo é encontrar todos os pares de emojis de animais escondidos n
 - **HTML5**  
 - **CSS3**  
 - **JavaScript (ES6+)**
-
----
-
-### 📸 Prévia do Jogo
-
-![preview](assets/preview.png)
 
 ---
 

@@ -37,6 +37,7 @@ function createCard(card) {
   const emoji = document.createElement("span");
   emoji.className = "card-emoji";
   emoji.textContent = card.content;
+  emoji.style.fontSize = "50px";
 
   cardElement.appendChild(emoji);
 

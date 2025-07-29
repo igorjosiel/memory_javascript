@@ -47,3 +47,7 @@ O objetivo do jogo é encontrar todos os pares de emojis de animais escondidos n
 - Tela de vitória com opção de reiniciar.
 - Níveis de dificuldade com mais cartas.
 - Versão mobile com responsividade aprimorada.
+
+### 🎮 Que tal jogar agora
+
+https://igorjosiel.github.io/memory_javascript/
